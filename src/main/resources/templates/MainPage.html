@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>专家审核</title>
+    <link rel="stylesheet" type="text/css" href="/css/login.css">
+    <strong style="font-size:40px; font-color:gery; font-family:'KaiTi'; border-radius:10px; position: absolute; left:30px; top:6px">请使用/checkApp?id=*或点击跳转开始您的审核</strong>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            height: 100%;
+        }
+        #color {
+            height: 100%;
+            background-color: #f69;
+        }
+        #form1{
+            width:500px;
+            height:20px;
+            position:relative;
+            left:20%;
+            top:30%;
+            margin-left:-150px;
+            margin-top:-80px;
+        }
+    </style>
+</head>
+<body bgcolor="#F4F3DE"></body>
+<body class="loginbody">
+<img src="./index/main1.jpg" width="1700" height="730" style="position: absolute; left:0; top:60px"/>
+<button onclick="window.location.href = 'MainPage'" style="position: absolute; left:1400px; top:10px; background: #c4caff; border-radius:10px; font-size: 30px; ">个人中心
+</button>
+<button onclick="window.location.href = 'index'" style="position: absolute; left:1130px; top:10px; background: #c4caff; border-radius:10px; font-size: 30px; ">首页
+</button>
+<button style="background: #c4caff; border-radius:10px; font-size: 30px; position: absolute; left:1570px; top:10px">注册
+</button>
+<button onclick="window.location.href = 'standard'" style="position: absolute; left:1230px; top:10px; background: #c4caff; border-radius:10px; font-size:30px; ">测评标准
+</button>
+
+<div id="form1">
+    <form action="modify"  method="post">
+        <table width="100%">
+            <tr>
+                <td style="text-align:center;line-height:3.5;">
+                    <h2 th:text="'待审核用户ID：'+${session.tid}"></h2>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:center;line-height:3.5;">
+                    <h2 th:text="'应用名称：'+${session.temp_name}"></h2>
+                </td>
+                <input type="text" id="name" name="name" style="font-size: 30px; position: absolute; left: 400px; top: 105px; width: 450px; height: 40px">
+
+            </tr>
+
+            <tr>
+                <td  style="text-align:center;line-height:3.5;">
+                    <h2 th:text="'应用分类：'+${session.temp_type}"></h2>
+                </td>
+                <input type="text" id="classify" name="classify" style="font-size: 30px; position: absolute; left: 400px; top: 195px; width: 450px; height: 40px">
+            </tr>
+
+            <tr>
+                <td style="text-align:center;line-height:3.5;">
+                    <h2 th:text="'安全等级：'+${session.temp_convention}"></h2>
+                </td>
+                <input type="text" id="safety" name="safety" style="font-size: 30px; position: absolute; left: 400px; top: 280px; width: 450px; height: 40px ">
+            </tr>
+
+            <tr>
+                <td style="text-align:center;line-height:5;">
+                    <h2 th:text="'应用分级：'+${session.temp_grade}"></h2>
+                </td>
+                <input type="text" id="grade" name="grade" style="font-size: 30px; position: absolute; left: 400px; top: 380px; width: 450px; height: 40px">
+                <input type="submit" value="确认修改" name="btn" style="font-size: 30px; position: absolute; left: 650px; top: 450px; width:200px; height: 50px; background: #c4caff">
+        </table>
+    </form>
+</div>
+</body>
+</html>
+
